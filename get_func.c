@@ -12,19 +12,14 @@ int (*get_func(char instruction_s))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruction[] = {
 		{"push", push},
-		{"pall", pall},
-		{"pint", pint},
-		{"pop", pop},
-		{"swap", swap},
-		{"add", add},
-		{"nop", nop},
+		{"pall", pall}
 	};
 	int i;
 
 	i = 0;
-	while (instruction[i].instruction_s != NULL)
+	while (instruction[i].opcode != NULL)
 	{
-		if (instruction[i].instruction_s[0] == instruction_s)
+		if (instruction[i].opcode[0] == instruction_s)
 		{
 			return (instruction[i].f);
 		}
