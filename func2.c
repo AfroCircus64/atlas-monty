@@ -7,7 +7,6 @@
 
 void monty_swap(void)
 {
-    
 }
 
 /**
@@ -17,7 +16,6 @@ void monty_swap(void)
 
 void monty_add(void)
 {
-    
 }
 
 /**
@@ -27,5 +25,4 @@ void monty_add(void)
 
 void monty_nop(void)
 {
-    
 }

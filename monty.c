@@ -36,7 +36,9 @@ int monty_s(int argc, char *argv[])
 
 	while ((read = getline(&line, &len, file)) != -1)
 	{
-
+		line[strcspn(line, "\n")] = 0;
+		execute_instruction(line, line_number);
+		line_number++;
 	}
 
 	free(line);
