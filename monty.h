@@ -1,5 +1,7 @@
 #ifndef MONTY_H
 #define MONTY_H
+#define EXIT_FAILURE 1
+#define STACK_SIZE 1024
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -30,6 +32,8 @@ typedef struct instruction_s
 		void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
+int stack[STACK_SIZE];
+void push(int element);
+void pall(void);
 
 #endif
