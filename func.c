@@ -3,18 +3,29 @@
 #include <stdlib.h>
 /**
  * push - pushes an element to the stack
- * @element: element to be pushedS
+ * @stack: stack
+ * @line_number: line number
 */
-void push(int element)
+void push(stack_t **stack, unsigned int line_number)
 {
-	int top = -1;
+	stack_t *new_node;
+	int n;
 
-	if (top >= STACK_SIZE - 1)
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
 	{
-		printf("Error: stack overflow\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
-	stack[++top] = element;
+
+	new_node->n = n;
+	new_node->next = *stack;
+	new_node->prev = NULL;
+
+	if (*stack != NULL)
+		(*stack)->prev = new_node;
+
+	*stack = new_node;
 }
 
 /**
